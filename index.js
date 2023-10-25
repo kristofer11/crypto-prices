@@ -1,4 +1,4 @@
-// import { serverUrl } from './config.dev.js'
+import { serverUrl } from './config.dev.js'
 
 let title = document.getElementById('title')
 let binance = document.getElementById('binance')
@@ -12,7 +12,7 @@ let xrp = document.getElementById('xrp')
 
 async function getPrices(){
     let currentPrices
-    await fetch(`${process.env.SERVER_URL}api/latest-crypto-price/`).then(res => res.json())
+    await fetch(serverUrl).then(res => res.json())
     .then(data => currentPrices = data)
     console.log(currentPrices)
 
