@@ -47,7 +47,7 @@ async function getPrices(){
 
 function isoTimestampToDateTime(isoTimestamp) {
     const date = new Date(isoTimestamp);
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/Los_Angeles' };
     return date.toLocaleString(undefined, options);
 }
 
