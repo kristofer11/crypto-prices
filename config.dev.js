@@ -1,0 +1,1 @@
+export const serverUrl = 'https://crypto-server-mcsl.onrender.com/api/latest-crypto-price/'
