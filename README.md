@@ -4,3 +4,5 @@ I just wanted a front-end that would use the data I store in my database that us
 The data likely won't be up-to-date unless I decide to collect the data continually for some reason. 
 
 I've included very specific information about when the data was current so as not to cause any confusion.
+
+Live demo: https://crypto-prices-five.vercel.app/
