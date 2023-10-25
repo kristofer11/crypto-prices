@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
+    <title>Cryptocurrency Prices</title>
 </head>
+
 <body>
-    
+    <h1 id="title">loading crypto data...</h1>
+    <ul>
+        <li class="crypto-item" id="binance">binance_price
+            : </li>
+        <li class="crypto-item" id="bitcoin">bitcoin_price
+            : </li>
+        <li class="crypto-item" id="cardano">cardano_price
+            : </li>
+        <li class="crypto-item" id="dogecoin">dogecoin_price
+            : </li>
+        <li class="crypto-item" id="ethereum">ethereum_price
+            : </li>
+        <li class="crypto-item" id="tether">tether_price
+            : </li>
+        <li class="crypto-item" id="usd">usd_price: </li>
+        <li class="crypto-item" id="xrp">xrp_price: </li>
+    </ul>
+    <script src="index.js" type="module"></script>
+    <script src="config.dev.js" type="module"></script>
 </body>
+
 </html>
