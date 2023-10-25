@@ -1,4 +1,4 @@
-import { serverUrl } from './config.dev.js'
+// import { serverUrl } from './config.dev.js'
 
 let title = document.getElementById('title')
 let binance = document.getElementById('binance')
