@@ -11,6 +11,24 @@ let usd = document.getElementById('usd')
 let xrp = document.getElementById('xrp')
 
 async function getPrices(){
+
+    function isoTimestampToDateTime(isoTimestamp) {
+        const date = new Date(isoTimestamp);
+        const adjustedDate = new Date(date.getTime() + (7 * 60 * 60 * 1000));
+
+        const options = { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit', 
+            hour12: true, 
+            timeZone:'America/Los_Angeles',
+        };
+        return adjustedDate.toLocaleString(undefined, options);
+    }
+
     let currentPrices
     await fetch(serverUrl).then(res => res.json())
     .then(data => currentPrices = data)
@@ -18,7 +36,7 @@ async function getPrices(){
 
     let timestamp = isoTimestampToDateTime(currentPrices.timestamp)
     console.log(timestamp)
-    title.textContent = `Current Crypto Prices as of ${timestamp} PST`
+    title.textContent = `Current Crypto Prices as of ${timestamp} PST`;
 
     let binancePrice = currentPrices.binance_price
     binance.textContent = `binance_price: $${binancePrice}`
@@ -44,12 +62,6 @@ async function getPrices(){
     let xrpPrice = currentPrices.xrp_price
     xrp.textContent = `xrp_price: $${xrpPrice}`
 } 
-
-function isoTimestampToDateTime(isoTimestamp) {
-    const date = new Date(isoTimestamp);
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/Los_Angeles' };
-    return date.toLocaleString(undefined, options);
-}
 
 getPrices()
 
