@@ -12,7 +12,7 @@ let xrp = document.getElementById('xrp')
 
 async function getPrices(){
     let currentPrices
-    await fetch(`${SERVER_URL}api/latest-crypto-price/`).then(res => res.json())
+    await fetch(`${process.env.SERVER_URL}api/latest-crypto-price/`).then(res => res.json())
     .then(data => currentPrices = data)
     console.log(currentPrices)
 
