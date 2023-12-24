@@ -4,13 +4,13 @@ let title = document.getElementById('title')
 let binance = document.getElementById('binance')
 let bitcoin = document.getElementById('bitcoin')
 let cardano = document.getElementById('cardano')
-let dogecoin = document.getElementById('dogecoin')
+// let dogecoin = document.getElementById('dogecoin')
 let ethereum = document.getElementById('ethereum')
 let tether = document.getElementById('tether')
 let usd = document.getElementById('usd')
 let xrp = document.getElementById('xrp')
-let lido = document.getElementById('usd')
-let avalanche = document.getElementById('xrp')
+let lido = document.getElementById('lido')
+let avalanche = document.getElementById('avalanche')
 
 async function getPrices() {
 
