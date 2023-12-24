@@ -9,29 +9,31 @@ let ethereum = document.getElementById('ethereum')
 let tether = document.getElementById('tether')
 let usd = document.getElementById('usd')
 let xrp = document.getElementById('xrp')
+let lido = document.getElementById('usd')
+let avalanche = document.getElementById('xrp')
 
-async function getPrices(){
+async function getPrices() {
 
     function isoTimestampToDateTime(isoTimestamp) {
         const date = new Date(isoTimestamp);
         const adjustedDate = new Date(date.getTime() + (7 * 60 * 60 * 1000));
 
-        const options = { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric', 
-            hour: '2-digit', 
-            minute: '2-digit', 
-            second: '2-digit', 
-            hour12: true, 
-            timeZone:'America/Los_Angeles',
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true,
+            timeZone: 'America/Los_Angeles',
         };
         return adjustedDate.toLocaleString(undefined, options);
     }
 
     let currentPrices
     await fetch(serverUrl).then(res => res.json())
-    .then(data => currentPrices = data)
+        .then(data => currentPrices = data)
     console.log(currentPrices)
 
     let timestamp = isoTimestampToDateTime(currentPrices.timestamp)
@@ -61,7 +63,13 @@ async function getPrices(){
 
     let xrpPrice = currentPrices.xrp_price
     xrp.textContent = `xrp_price: $${xrpPrice}`
-} 
+
+    let lidoPrice = currentPrices.lido_price
+    lido.textContent = `lido_staked_eth_price: $${lidoPrice}`
+
+    let avalanchePrice = currentPrices.avalanche_price
+    avalanche.textContent = `avalanche_price: $${avalanchePrice}`
+}
 
 getPrices()
 
