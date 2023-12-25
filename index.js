@@ -60,7 +60,7 @@ async function getPrices() {
     let xrpPrice = currentPrices.xrp_price
     xrp.textContent = `xrp_price: $${xrpPrice}`
 
-    let lidoPrice = currentPrices.lido_price
+    let lidoPrice = currentPrices.lido_staked_eth_price
     lido.textContent = `lido_staked_eth_price: $${lidoPrice}`
 
     let avalanchePrice = currentPrices.avalanche_price
