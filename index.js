@@ -4,7 +4,6 @@ let title = document.getElementById('title')
 let binance = document.getElementById('binance')
 let bitcoin = document.getElementById('bitcoin')
 let cardano = document.getElementById('cardano')
-// let dogecoin = document.getElementById('dogecoin')
 let ethereum = document.getElementById('ethereum')
 let tether = document.getElementById('tether')
 let usd = document.getElementById('usd')
@@ -48,9 +47,6 @@ async function getPrices() {
 
     let cardanoPrice = currentPrices.cardano_price
     cardano.textContent = `cardano_price: $${cardanoPrice}`
-
-    let dogecoinPrice = currentPrices.dogecoin_price
-    dogecoin.textContent = `dogecoin_price: $${dogecoinPrice}`
 
     let ethereumPrice = currentPrices.ethereum_price
     ethereum.textContent = `ethereum_price: $${ethereumPrice}`
